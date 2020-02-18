@@ -3,6 +3,8 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
 const guesses = document.querySelector('.guesses');
 const lowOrHigh = document.querySelector('.lowOrHigh');
 const lastResult = document.querySelector('.lastResult');
+const overlay = document.querySelector('.overlay');
+
 
 const guessField = document.querySelector('.guessField');
 const guessFieldSubmit = document.querySelector('.guessFieldSubmit');
@@ -17,11 +19,11 @@ function checkGuess() {
     if (guessCount === 1) {
         guesses.textContent = "Previous guesses: ";
     }
-    guesses.textContent += userGuess + ' ';
+    guesses.textContent += userGuess + ', ';
 
     if (userGuess === randomNumber) {
         lastResult.textContent = "Congratulations!!! You got it right!!!";
-        lastResult.style.backgroundColor = 'green';
+        lastResult.style.backgroundColor = '#63F5B7';
         lowOrHigh.textContent = " ";
         setGameOver();
     }
@@ -31,7 +33,7 @@ function checkGuess() {
     }
     else {
         lastResult.textContent = "Wrong!";
-        lastResult.style.backgroundColor = 'red';
+        lastResult.style.backgroundColor = '#FF3636';
         if (userGuess < randomNumber) {
             lowOrHigh.textContent = "Last guess was too low!"
         } else if (userGuess > randomNumber) {
@@ -46,6 +48,12 @@ function checkGuess() {
 }
 
 guessFieldSubmit.addEventListener('click', checkGuess);
+guessField.addEventListener('keydown', (e) => {
+
+    if (e.code == 'Enter') {
+        checkGuess();
+    }
+});
 
 function setGameOver() {
     guessField.disabled = true;
@@ -54,7 +62,9 @@ function setGameOver() {
     resetButton.textContent = "Start new game";
     document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
+    overlay.style = "background-color: black; height: 100%; width: 100%; opacity: 0.7; z-index: 1;";
 }
+
 
 function resetGame() {
     guessCount = 1;
@@ -70,6 +80,7 @@ function resetGame() {
     guessFieldSubmit.disabled = false;
     guessField.value = '';
     guessField.focus();
+    overlay.style = '';
 
     lastResult.style.backgroundColor = '#F4ADAD';
 

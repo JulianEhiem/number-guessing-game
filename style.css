@@ -1,25 +1,30 @@
 body {
     font-family:'Montserrat', sans-serif;
-    height: 100vh;
+    height: 100%;
     position: relative;
 
 }
 h1{
-    font-size: 40px;
+    font-size: 35px;
 } 
+h2{
+    font-size: 25px;
+    margin: 10px;
+}
 header {
  display: block;
- background-color: rgb(214, 214, 214);
- border: 1px solid black;
- border-radius: 12px;
- width: 700px;
+background-color: #F0F0F0; 
+ border: 1px solid rgb(158, 158, 158);
+ border-radius: 20px;
+ width: 500px;
  height: auto;
  margin-left: auto;
  margin-right: auto;
  text-align: center;
- z-index: 1;
+ z-index: 5;
  position: relative;
  padding: 0;
+ top: 20px;
  
 
 }
@@ -27,14 +32,14 @@ header {
 .gameContainer {
     background-color: rgb(49, 49, 49);
 border: 1px solid black;
- border-radius: 12px;
- width: 650px;
- height: 70vh;
+ border-radius: 25px;
+ width: 500px;
+ height: auto;
  margin-left: auto;
  margin-right: auto;
  z-index: 0;
  position: absolute;
- padding: 75px;
+ padding: 40px;
  top: 80px;
  left: 0;
  right: 0;
@@ -49,17 +54,19 @@ border: 1px solid black;
     background-color: rgb(143, 236, 236);
   border: 1px solid black;
   padding: 15px;
- border-radius: 12px;
- width: 550px;
- height: 110px;
- margin-left: auto;
- margin-right: auto;
+ border-radius: 15px;
+ width: 400px;
+ height: 100px;
  text-align: center;
  justify-content: center;
- margin-bottom: 40px;
+ margin: 15px;
  
 }
 
+.gameInstructions p {
+    font-size: 13px;
+    line-height: 1.6em;
+}
 .gameFieldContainer {
     display: inline-block;
     box-sizing: content-box;
@@ -67,19 +74,17 @@ border: 1px solid black;
     background-color: #F0F0F0;
     border: 1px solid black;
     border-radius: 12px;
-    width: 500px;
-    height: 125px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 400px;
+    height: auto;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px;
     padding: 15px;
  
 }
 .guessField {
     width: 75px;
     height: 20px;
-    margin: 10px;
+    margin: 5px;
 }
 .guessFieldSubmit {
     width: 80px;
@@ -90,66 +95,714 @@ border: 1px solid black;
     margin: 5px 10px 10px 10px;
 }
 
-.guessFieldLabel {
-   
-    font-size: 27px;
-    padding-top: 50px;
-}
-
-
 .resultParas {
+    display: inline-block;
+    padding: 0;
+    margin:0;
 
 }
 
 .guesses {
+    display: inline-block;
+    box-sizing: border-box;
     background-color: #AEEAF0;
     border: 1px solid black;
     border-radius: 12px;
-    width: 500px;
+    width: 400px;
  height: 45px;
- margin-left: auto;
- margin-right: auto;
+ margin:10px;
  text-align: center;
+ padding: 10px;
 }
 
 .lowOrHigh {
+    display: inline-block;
+    box-sizing: border-box;
     background-color: #99F4DB;
     border: 1px solid black;
     border-radius: 12px;
-    width: 500px;
+    width: 400px;
  height: 45px;
- margin-left: auto;
- margin-right: auto;
+    margin: 10px;
  text-align: center;
+ padding: 10px;
 }
 
 .lastResult {
+    display: inline-block;
+    box-sizing: border-box;
     background-color: #F4ADAD;
     border: 1px solid black;
     border-radius: 12px;
-    width: 500px;
+    width: 400px;
  height: 45px;
- margin-left: auto;
- margin-right: auto;
+ margin: 10px;
  text-align: center;
+ padding: 10px;
 }
 
 button {
     background-color: orange;
-    width: 180px;
-    height: 70px;
-    border-radius: 5px;
-    font-size: 20px;
+    width: 350px;
+    height: 90px;
+    border-radius: 10px;
+    font-size: 40px;
     position: fixed;
-    bottom: 5vh;
+    bottom: 50vh;
     left: 50%;
     transform: translate(-50%,0);
+    z-index: 11;
+    animation-name: slideUp;
+    animation-duration: 1200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     
 }
 
+button:hover {
+    background-color: rgb(84, 151, 84);
+    color: white;
+
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(0vw, 50vh) translate(-50%,0);
+    }
+    to {
+        transform: translate(0vw, 0vh) translate(-50%,0);
+    }
+}
+
+@media (min-width: 150px){
+    h1{
+        font-size: 15px;
+    }
+    header{
+        display: inline-block;
+        background-color: #F0F0F0; 
+        border: 1px solid rgb(158, 158, 158);
+        width: 85%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 5;
+        position: relative;
+        padding: 0;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    .gameContainer{
+        background-color: rgb(49, 49, 49);
+        border: 1px solid black;
+        box-sizing: border-box;
+        border-radius: 25px;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 0;
+        position: absolute;
+        padding:30px 20px 20px 20px;
+        top: 40px;
+        left: 0;
+        right: 0;
+        align-items: center;
+        text-align: center;
+         
+    }
+    .gameInstructions{
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: rgb(143, 236, 236);
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 15px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        justify-content: center;
+        margin: 10px;
+    }
+    .gameInstructions p{
+        font-size: 11px;
+        line-height: 1.3em;
+    }
+    .gameFieldContainer {
+        display: inline-block;
+        box-sizing: border-box;
+        flex-direction: row;
+        background-color: #F0F0F0;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 90%;
+        height: auto;
+        text-align: center;
+        margin: 10px;
+        padding: 5px;
+     
+    }
+    h2{
+        font-size: 15px;
+        margin: 5px;
+    }
+    .resultParas {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 100%;
+        padding:10px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .guesses {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #AEEAF0;
+        border: 1px solid black;
+        border-radius: 12px;
+        width:100%;
+        min-height: 20px;
+        height: auto;
+        margin: 5px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 11px;
+    }
+    .lowOrHigh {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #99F4DB;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 20px;
+        height: auto;
+        margin: 5px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 11px;
+    }
+    .lastResult {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #F4ADAD;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 20px;
+        height: auto;
+        margin: 5px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 11px;
+    }
+    button {
+        background-color: orange;
+        width: auto;
+        height: auto;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 20px;
+        position: fixed;
+        bottom: 50vh;
+        left: 50%;
+        transform: translate(-50%,0);
+        z-index: 11;
+        animation-name: slideUp;
+        animation-duration: 1200ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        
+    }
+}
+
+    @media (min-width: 400px){
+        h1{
+            font-size: 19px;
+        }
+        header{
+            display: inline-block;
+            background-color:#F0F0F0; 
+            border: 1px solid rgb(158, 158, 158);
+            width: 80%;
+            max-width: 375px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            z-index: 5;
+            position: relative;
+            padding: 0;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .gameContainer{
+            background-color: rgb(49, 49, 49);
+            border: 1px solid black;
+            box-sizing: border-box;
+            border-radius: 25px;
+            width: 100%;
+            max-width: 425px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 0;
+            position: absolute;
+            padding:35px;
+            top: 40px;
+            left: 0;
+            right: 0;
+            align-items: center;
+            text-align: center;
+             
+        }
+        .gameInstructions{
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: rgb(143, 236, 236);
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 15px;
+            width: auto;
+            height: auto;
+            text-align: center;
+            justify-content: center;
+            margin: 10px;
+        }
+        .gameInstructions p{
+            font-size: 11px;
+            line-height: 1.3em;
+        }
+        .gameFieldContainer {
+            display: inline-block;
+            box-sizing: border-box;
+            flex-direction: row;
+            background-color: #F0F0F0;
+            border: 1px solid black;
+            border-radius: 12px;
+            width: 90%;
+            height: auto;
+            text-align: center;
+            margin: 10px;
+            padding: 5px;
+         
+        }
+        h2{
+            font-size: 16px;
+            margin: 5px;
+        }
+        .guessField {
+            width: 75px;
+            height: 20px;
+            margin: 7px;
+        }
+        .guessFieldSubmit {
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #63F5B7;
+            font-size: 13px;
+            margin: 5px 10px 10px 10px;
+        }
+        .resultParas {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 100%;
+            padding:10px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .guesses {
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: #AEEAF0;
+            border: 1px solid black;
+            border-radius: 12px;
+            width:100%;
+            min-height: 20px;
+            height: auto;
+            margin: 5px 0px;
+            text-align: center;
+            padding: 5px;
+            font-size: 11px;
+        }
+        .lowOrHigh {
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: #99F4DB;
+            border: 1px solid black;
+            border-radius: 12px;
+            width: 100%;
+            min-height: 20px;
+            height: auto;
+            margin: 5px 0px;
+            text-align: center;
+            padding: 5px;
+            font-size: 11px;
+        }
+        .lastResult {
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: #F4ADAD;
+            border: 1px solid black;
+            border-radius: 12px;
+            width: 100%;
+            min-height: 20px;
+            height: auto;
+            margin: 5px 0px;
+            text-align: center;
+            padding: 5px;
+            font-size: 11px;
+        }
+        button {
+            background-color: orange;
+            width: auto;
+            height: auto;
+            padding: 7px;
+            border-radius: 10px;
+            font-size: 25px;
+            position: fixed;
+            bottom: 50vh;
+            left: 50%;
+            transform: translate(-50%,0);
+            z-index: 11;
+            animation-name: slideUp;
+            animation-duration: 1200ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            
+        }
+}
+
+@media (min-width: 600px){
+    h1{
+        font-size: 21px;
+    }
+    header{
+        display: inline-block;
+        background-color:#F0F0F0; 
+        border: 1px solid rgb(158, 158, 158);
+        width: 85%;
+        max-width: 390px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 5;
+        position: relative;
+        padding: 0;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    .gameContainer{
+        background-color: rgb(49, 49, 49);
+        border: 1px solid black;
+        box-sizing: border-box;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 0;
+        position: absolute;
+        padding:35px;
+        top: 70px;
+        left: 0;
+        right: 0;
+        align-items: center;
+        text-align: center;
+         
+    }
+    .gameInstructions{
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: rgb(143, 236, 236);
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 15px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        justify-content: center;
+        margin: 25px 30px 20px 30px;
+    }
+    .gameInstructions p{
+        font-size: 12px;
+        line-height: 1.4em;
+    }
+    .gameFieldContainer {
+        display: inline-block;
+        box-sizing: border-box;
+        flex-direction: row;
+        background-color: #F0F0F0;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 85%;
+        height: auto;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+     
+    }
+    h2{
+        font-size: 17px;
+        margin: 5px;
+    }
+    .guessField {
+        width: 75px;
+        height: 20px;
+        margin: 10px;
+    }
+    .guessFieldSubmit {
+        width: 80px;
+        height: 35px;
+        border-radius: 5px;
+        background-color: #63F5B7;
+        font-size: 15px;
+        margin: 5px 10px 10px 10px;
+    }
+    .resultParas {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 100%;
+        padding:15px 10px 10px 10px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+    .guesses {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #AEEAF0;
+        border: 1px solid black;
+        border-radius: 12px;
+        width:100%;
+        min-height: 30px;
+        height: auto;
+        margin: 7px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 12.5px;
+    }
+    .lowOrHigh {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #99F4DB;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 30px;
+        height: auto;
+        margin: 7px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 12.5px;
+    }
+    .lastResult {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #F4ADAD;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 30px;
+        height: auto;
+        margin: 7px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 12.5px;
+    }
+    button {
+        background-color: orange;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 30px;
+        position: fixed;
+        bottom: 50vh;
+        left: 50%;
+        transform: translate(-50%,0);
+        z-index: 11;
+        animation-name: slideUp;
+        animation-duration: 1200ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        
+    }
+}
+
+@media (min-width: 800px){
+    h1{
+        font-size: 25px;
+    }
+    header{
+        display: inline-block;
+        background-color:#F0F0F0; 
+        border: 1px solid rgb(158, 158, 158);
+        width: 85%;
+        max-width: 410px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 5;
+        position: relative;
+        padding: 0;
+        top: 60px;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    .gameContainer{
+        background-color: rgb(49, 49, 49);
+        border: 1px solid black;
+        box-sizing: border-box;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 475px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 0;
+        position: absolute;
+        padding:30px;
+        top: 90px;
+        left: 0;
+        right: 0;
+        align-items: center;
+        text-align: center;
+         
+    }
+    .gameInstructions{
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: rgb(143, 236, 236);
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 15px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        justify-content: center;
+        margin: 35px 30px 35px 30px;
+    }
+    .gameInstructions p{
+        font-size: 13px;
+        line-height: 1.5em;
+    }
+    .gameFieldContainer {
+        display: inline-block;
+        box-sizing: border-box;
+        flex-direction: row;
+        background-color: #F0F0F0;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 85%;
+        height: auto;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+     
+    }
+    h2{
+        font-size: 18px;
+        margin: 8px;
+    }
+    .guessField {
+        width: 75px;
+        height: 20px;
+        margin: 10px;
+    }
+    .guessFieldSubmit {
+        width: 85px;
+        height: 37px;
+        border-radius: 5px;
+        background-color: #63F5B7;
+        font-size: 16px;
+        margin: 10px 10px 10px 10px;
+    }
+    .resultParas {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 100%;
+        padding:15px 10px 10px 10px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .guesses {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #AEEAF0;
+        border: 1px solid black;
+        border-radius: 12px;
+        width:100%;
+        min-height: 35px;
+        height: auto;
+        margin: 10px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 13px;
+    }
+    .lowOrHigh {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #99F4DB;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 35px;
+        height: auto;
+        margin: 10px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 13px;
+    }
+    .lastResult {
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #F4ADAD;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        min-height: 35px;
+        height: auto;
+        margin: 10px 0px;
+        text-align: center;
+        padding: 5px;
+        font-size: 13px;
+        
+    }
+    button {
+        background-color: orange;
+        width: auto;
+        height: auto;
+        padding: 12px;
+        border-radius: 12px;
+        font-size: 31px;
+        position: fixed;
+        bottom: 50vh;
+        left: 50%;
+        transform: translate(-50%,0);
+        z-index: 11;
+        animation-name: slideUp;
+        animation-duration: 1200ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        
+    }
+}
+
+
+
+
+
+
 /* NOTES FOR NEXT SESSION
 
-1. even out the spacing on the UI
 2. Make it responsive
 3. Format code
 4. Leave comments around ambiguous code

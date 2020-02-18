@@ -9,7 +9,7 @@
     <title>Guessing Game</title>
 </head>
 
-<body>
+<body class="entireBody overlay">
     <header>
         <h1>Number Guessing Game</h1>
     </header>
@@ -23,15 +23,18 @@
             </div>
         </div>
         <div class="gameFieldContainer">
-            <label class="guessFieldLabel" for="guessField">Enter your guess below </label><br>
+            <label class="guessFieldLabel" for="guessField">
+                <h2>Enter your guess below </h2>
+            </label>
             <input type="number" class="guessField" placeholder="Your guess" required><br>
             <input class="guessFieldSubmit" type="submit" value="Submit"></input>
         </div>
 
         <div class="resultParas">
             <p class="guesses"></p>
-            <p class="lowOrHigh"></p>
             <p class="lastResult"></p>
+            <p class="lowOrHigh"></p>
+
         </div>
     </div>
 </body>
