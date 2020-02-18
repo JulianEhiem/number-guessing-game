@@ -1,0 +1,157 @@
+body {
+    font-family:'Montserrat', sans-serif;
+    height: 100vh;
+    position: relative;
+
+}
+h1{
+    font-size: 40px;
+} 
+header {
+ display: block;
+ background-color: rgb(214, 214, 214);
+ border: 1px solid black;
+ border-radius: 12px;
+ width: 700px;
+ height: auto;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+ z-index: 1;
+ position: relative;
+ padding: 0;
+ 
+
+}
+
+.gameContainer {
+    background-color: rgb(49, 49, 49);
+border: 1px solid black;
+ border-radius: 12px;
+ width: 650px;
+ height: 70vh;
+ margin-left: auto;
+ margin-right: auto;
+ z-index: 0;
+ position: absolute;
+ padding: 75px;
+ top: 80px;
+ left: 0;
+ right: 0;
+ align-items: center;
+ text-align: center;
+ 
+}
+
+.gameInstructions {
+   display: inline-block;
+   box-sizing: content-box;
+    background-color: rgb(143, 236, 236);
+  border: 1px solid black;
+  padding: 15px;
+ border-radius: 12px;
+ width: 550px;
+ height: 110px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+ justify-content: center;
+ margin-bottom: 40px;
+ 
+}
+
+.gameFieldContainer {
+    display: inline-block;
+    box-sizing: content-box;
+    flex-direction: row;
+    background-color: #F0F0F0;
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 500px;
+    height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+ 
+}
+.guessField {
+    width: 75px;
+    height: 20px;
+    margin: 10px;
+}
+.guessFieldSubmit {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #63F5B7;
+    font-size: 13px;
+    margin: 5px 10px 10px 10px;
+}
+
+.guessFieldLabel {
+   
+    font-size: 27px;
+    padding-top: 50px;
+}
+
+
+.resultParas {
+
+}
+
+.guesses {
+    background-color: #AEEAF0;
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 500px;
+ height: 45px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+}
+
+.lowOrHigh {
+    background-color: #99F4DB;
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 500px;
+ height: 45px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+}
+
+.lastResult {
+    background-color: #F4ADAD;
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 500px;
+ height: 45px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+}
+
+button {
+    background-color: orange;
+    width: 180px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+}
+
+/* NOTES FOR NEXT SESSION
+
+1. even out the spacing on the UI
+2. Make it responsive
+3. Format code
+4. Leave comments around ambiguous code
+
+*/

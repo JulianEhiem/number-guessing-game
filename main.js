@@ -8,37 +8,40 @@ const guessField = document.querySelector('.guessField');
 const guessFieldSubmit = document.querySelector('.guessFieldSubmit');
 
 let guessCount = 1;
+let resetButton;
+guessField.focus();
 
 
 function checkGuess() {
-        let userGuess = Number(guessField.value);
+    let userGuess = Number(guessField.value);
     if (guessCount === 1) {
-        guesses.textContent = "Previous guess: ";
+        guesses.textContent = "Previous guesses: ";
     }
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
-        lastResult.textContent = "Congratulations!!! You guessed it!!!";
+        lastResult.textContent = "Congratulations!!! You got it right!!!";
         lastResult.style.backgroundColor = 'green';
         lowOrHigh.textContent = " ";
         setGameOver();
     }
-     else if (guessCount === 10) {
+    else if (guessCount === 10) {
         lastResult.textContent = "!!!GAME OVER!!!";
-        lowOrHigh.textContent = " ";
         setGameOver();
     }
     else {
         lastResult.textContent = "Wrong!";
-        lastResult.style.backgroundColor ='red';
+        lastResult.style.backgroundColor = 'red';
         if (userGuess < randomNumber) {
-            lowOrHigh.textContent = "Your guess was too low!"
-        }else {
-            lowOrHigh.textContent = "Your guess was too high!"
+            lowOrHigh.textContent = "Last guess was too low!"
+        } else if (userGuess > randomNumber) {
+            lowOrHigh.textContent = "Last guess was too high!"
         }
     }
 
-    guessCount ++;
+    guessCount++;
+    guessField.value = '';
+    guessField.focus();
 
 }
 
@@ -54,10 +57,10 @@ function setGameOver() {
 }
 
 function resetGame() {
-    let guessCount = 1;
+    guessCount = 1;
 
     const resetParas = document.querySelectorAll('.resultParas p')
-    for (let i = 0 ; i < resetParas.length; i++) {
+    for (let i = 0; i < resetParas.length; i++) {
         resetParas[i].textContent = '';
     }
 
@@ -68,6 +71,8 @@ function resetGame() {
     guessField.value = '';
     guessField.focus();
 
-    
+    lastResult.style.backgroundColor = '#F4ADAD';
+
+
     let randomNumber = Math.floor(Math.random() * 100) + 1;
 }
