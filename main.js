@@ -85,5 +85,5 @@ function resetGame() {
     lastResult.style.backgroundColor = '#F4ADAD';
 
 
-    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 100) + 1;
 }

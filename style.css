@@ -57,7 +57,7 @@ border: 1px solid black;
  border-radius: 15px;
  width: 400px;
  height: 100px;
- text-align: center;
+ text-align: left;
  justify-content: center;
  margin: 15px;
  
@@ -682,7 +682,7 @@ button:hover {
         box-sizing: border-box;
         background-color: rgb(143, 236, 236);
         border: 1px solid black;
-        padding: 10px;
+        padding: 18px;
         border-radius: 15px;
         width: auto;
         height: auto;
